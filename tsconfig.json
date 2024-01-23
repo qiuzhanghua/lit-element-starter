@@ -24,11 +24,11 @@
     "plugins": [
       {
         "name": "ts-lit-plugin",
-        "strict": true
-      }
+        "strict": true,
+      },
     ],
-    "types": ["mocha"]
+    "types": ["mocha"],
   },
   "include": ["src/**/*.ts"],
-  "exclude": []
+  "exclude": [],
 }
