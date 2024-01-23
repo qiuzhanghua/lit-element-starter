@@ -16,7 +16,7 @@ Lit 3.0 has very few breaking changes from Lit 2.0:
 - Published as ES2021
 - Removes a couple of deprecated Lit 1.x APIs
 
-Lit 3.0 should require no changes to upgrade from Lit 2.0 for the vast majority of users. Once the full release is published, most apps and libraries will be able to extend their npm version ranges to include both 2.x and 3.x, like `"^2.7.0 || ^3.0.0"`.
+Lit 3.0 should require no changes to upgrade from Lit 2.0 for the vast majority of users. Once the full release is published, most apps and libraries will be able to extend their pnpm version ranges to include both 2.x and 3.x, like `"^2.7.0 || ^3.0.0"`.
 
 Lit 2.x and 3.0 are _interoperable_: templates, base classes, directives, decorators, etc., from one version of Lit will work with those from another.
 
@@ -27,7 +27,7 @@ Please file any issues you find on our [issue tracker](https://github.com/lit/li
 Install dependencies:
 
 ```bash
-npm i
+pnpm i
 ```
 
 ## Build
@@ -37,13 +37,13 @@ This sample uses the TypeScript compiler to produce JavaScript that runs in mode
 To build the JavaScript version of your component:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 To watch files and rebuild when the files are modified, run the following command in a separate shell:
 
 ```bash
-npm run build:watch
+pnpm build:watch
 ```
 
 Both the TypeScript compiler and lit-analyzer are configured to be very strict. You may want to change `tsconfig.json` to make them less strict.
@@ -51,35 +51,35 @@ Both the TypeScript compiler and lit-analyzer are configured to be very strict. 
 ## Testing
 
 This sample uses modern-web.dev's
-[@web/test-runner](https://www.npmjs.com/package/@web/test-runner) for testing. See the
+[@web/test-runner](https://www.pnpmjs.com/package/@web/test-runner) for testing. See the
 [modern-web.dev testing documentation](https://modern-web.dev/docs/test-runner/overview) for
 more information.
 
 Tests can be run with the `test` script, which will run your tests against Lit's development mode (with more verbose errors) as well as against Lit's production mode:
 
 ```bash
-npm test
+pnpm test
 ```
 
 For local testing during development, the `test:dev:watch` command will run your tests in Lit's development mode (with verbose errors) on every change to your source files:
 
 ```bash
-npm test:watch
+pnpm test:watch
 ```
 
 Alternatively the `test:prod` and `test:prod:watch` commands will run your tests in Lit's production mode.
 
 ## Dev Server
 
-This sample uses modern-web.dev's [@web/dev-server](https://www.npmjs.com/package/@web/dev-server) for previewing the project without additional build steps. Web Dev Server handles resolving Node-style "bare" import specifiers, which aren't supported in browsers. It also automatically transpiles JavaScript and adds polyfills to support older browsers. See [modern-web.dev's Web Dev Server documentation](https://modern-web.dev/docs/dev-server/overview/) for more information.
+This sample uses modern-web.dev's [@web/dev-server](https://www.pnpmjs.com/package/@web/dev-server) for previewing the project without additional build steps. Web Dev Server handles resolving Node-style "bare" import specifiers, which aren't supported in browsers. It also automatically transpiles JavaScript and adds polyfills to support older browsers. See [modern-web.dev's Web Dev Server documentation](https://modern-web.dev/docs/dev-server/overview/) for more information.
 
 To run the dev server and open the project in a new browser tab:
 
 ```bash
-npm run serve
+pnpm serve
 ```
 
-There is a development HTML file located at `/dev/index.html` that you can view at http://localhost:8000/dev/index.html. Note that this command will serve your code using Lit's development mode (with more verbose errors). To serve your code against Lit's production mode, use `npm run serve:prod`.
+There is a development HTML file located at `/dev/index.html` that you can view at http://localhost:8000/dev/index.html. Note that this command will serve your code using Lit's development mode (with more verbose errors). To serve your code against Lit's production mode, use `pnpm serve:prod`.
 
 ## Editing
 
@@ -97,14 +97,14 @@ The project is setup to recommend lit-plugin to VS Code users if they don't alre
 
 ## Linting
 
-Linting of TypeScript files is provided by [ESLint](eslint.org) and [TypeScript ESLint](https://github.com/typescript-eslint/typescript-eslint). In addition, [lit-analyzer](https://www.npmjs.com/package/lit-analyzer) is used to type-check and lint lit-html templates with the same engine and rules as lit-plugin.
+Linting of TypeScript files is provided by [ESLint](eslint.org) and [TypeScript ESLint](https://github.com/typescript-eslint/typescript-eslint). In addition, [lit-analyzer](https://www.pnpmjs.com/package/lit-analyzer) is used to type-check and lint lit-html templates with the same engine and rules as lit-plugin.
 
 The rules are mostly the recommended rules from each project, but some have been turned off to make LitElement usage easier. The recommended rules are pretty strict, so you may want to relax them by editing `.eslintrc.json` and `tsconfig.json`.
 
 To lint the project run:
 
 ```bash
-npm run lint
+pnpm lint
 ```
 
 ## Formatting
@@ -122,24 +122,24 @@ To enable the site go to the GitHub settings and change the GitHub Pages &quot;S
 To build the site, run:
 
 ```bash
-npm run docs
+pnpm docs
 ```
 
 To serve the site locally, run:
 
 ```bash
-npm run docs:serve
+pnpm docs:serve
 ```
 
 To watch the site files, and re-build automatically, run:
 
 ```bash
-npm run docs:watch
+pnpm docs:watch
 ```
 
 The site will usually be served at http://localhost:8000.
 
-**Note**: The project uses Rollup to bundle and minify the source code for the docs site and not to publish to NPM. For bundling and minification, check the [Bundling and minification](#bundling-and-minification) section.
+**Note**: The project uses Rollup to bundle and minify the source code for the docs site and not to publish to pnpm. For bundling and minification, check the [Bundling and minification](#bundling-and-minification) section.
 
 ## Bundling and minification
 
